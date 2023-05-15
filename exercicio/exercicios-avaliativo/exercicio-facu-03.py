@@ -72,4 +72,10 @@ def rotaObjeto():
             print("Por favor, digite a rota desejada novamente.")
 
 
-print(dimensoesObejeto())
+dimensao = dimensoesObejeto()
+peso = pesoObjeto()
+rota = rotaObjeto()
+
+total = dimensao * peso * rota
+
+print("Total a pagar é R$ {:.2f} (dimensões:{} * peso:{} * rota:{})".format(total, dimensao, peso, rota))
