@@ -4,48 +4,53 @@ print("Bem vindo a companhia de Logistica Willian aquino")
 def dimensoesObejeto():
     while True:
         try:
-            comprimento = int(input('Digite o comprimento do obejto (em cm)'))
-            largura = int(input('Digite a largura do obejto (em cm)'))
-            altura = int(input('Digite a altura do obejto (em cm)'))
+            comprimento = float(input('Digite o comprimento do obejto (em cm)'))
+            largura = float(input('Digite a largura do obejto (em cm)'))
+            altura = float(input('Digite a altura do obejto (em cm)'))
             volume = (altura * largura * comprimento)
-            break
-        except ValueError:
-            print("Você digitou alguma dimensão não numérico")
-        except:
-            print("algo deu errado")
-    if (volume < 1000):
-        return 10
-    elif (volume >= 1000 and volume < 10000):
-        return 20
-    elif (volume >= 10000 and volume < 30000):
-        return 30
-    elif (volume >= 30000 and volume < 100000):
-        return 50
-    elif (volume >= 100000):
-        print("Não é aceito objetos tão grande")
+            print("O volume do objeto é (em cm³) {} ".format(volume))
 
-    print("o volume do objeto é {}".format(volume))
+            if (volume < 1000):
+                return 10
+            elif (volume >= 1000 and volume < 10000):
+                return 20
+            elif (volume >= 10000 and volume < 30000):
+                return 30
+            elif (volume >= 30000 and volume < 100000):
+                return 50
+            else:
+                print("Não é aceito objetos tão grande")
+                print("Por favor, entre com as dimensões novamente")
+
+
+
+
+        except ValueError:
+            print("Você digitou alguma dimensão não numérica. Por favor, entre com as dimensões novamente.")
+            continue
 
 
 def pesoObjeto():
-    try:
-        peso = float(input("Digite o peso do objeto (em kg)"))
+    while True:
+        try:
+            peso = float(input("Digite o peso do objeto (em kg)"))
 
-    except ValueError:
-        print("Entrada inválida. Por favor, digite um valor numérico")
+        except ValueError:
+            print("Entrada inválida. Por favor, digite um valor numérico")
+            continue
 
-        return
+            return
 
-    if (peso <= 0.1):
-        return 1
-    elif (peso >= 0.1 and peso < 1):
-        return 1.5
-    elif (peso >= 1 and peso < 10):
-        return 2
-    elif (peso >= 10 and peso < 30):
-        return 3
-    elif (peso) >= 30:
-        return print("não é aceito , peso acima do limite maximo")
+        if (peso <= 0.1):
+            return 1
+        elif (peso >= 0.1 and peso < 1):
+            return 1.5
+        elif (peso >= 1 and peso < 10):
+            return 2
+        elif (peso >= 10 and peso < 30):
+            return 3
+        else:
+            print("não é aceito , peso acima do limite maximo")
 
 
 def rotaObjeto():
